@@ -15,16 +15,21 @@ public class DragObject : MonoBehaviour
 
 
     private float mZCoord;
+   
+    void Start()
+    {
 
+       // zStart = transform.position.z;
+    }
 
 
     void OnMouseDown()
-
+        
     {
 
-        mZCoord = Camera.main.WorldToScreenPoint(
+       mZCoord = Camera.main.WorldToScreenPoint(
 
-            gameObject.transform.position).z;
+           gameObject.transform.position).z;
 
 
 
