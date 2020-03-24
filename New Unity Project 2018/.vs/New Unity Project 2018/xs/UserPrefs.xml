@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{EA8DE640-E75C-E200-86A4-E537C6EF79C9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/apartment-building/kitchen/textures/Coltest.cs">
+    <Files>
+      <File FileName="Assets/apartment-building/kitchen/textures/NewBehaviourScript.cs" Line="21" Column="1" IsPinned="True" />
+      <File FileName="Assets/apartment-building/kitchen/textures/Coltest.cs" Line="1" Column="1" />
+      <File FileName="Assets/NewBehaviourScript.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="New Unity Project 2018" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d792f1fe-a692-4e95-b25f-dabea589dcb8" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
