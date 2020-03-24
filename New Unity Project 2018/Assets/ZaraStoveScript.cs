@@ -35,4 +35,22 @@ public class ZaraStoveScript : MonoBehaviour
             rend.sharedMaterial =materials[index -1]; 
         }
     }
+
+//     public void buttonPressed(){
+//         if(materials.Length == 0) 
+//         {
+//             return; 
+//         }
+
+//         if(Input.GetMouseButtonDown(0)) {
+//             index +=1;
+//             if (index == materials.Length + 1) {
+//                 index = 1;
+//             }
+
+//             print(index); 
+
+//             rend.sharedMaterial =materials[index -1]; 
+//     } 
+// }
 }
