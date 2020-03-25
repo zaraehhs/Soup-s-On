@@ -22,18 +22,20 @@ public class origDragObject : MonoBehaviour
     private bool grabbed = false;
     private Vector3 newLocation;
     private float maxDrag = 20;
+    private bool inWater = false;
     Rigidbody rb;
 
     //public GameObject : Transform;
     void Start()
     {
-        
+       
         rb = GetComponent<Rigidbody>();
         yStart = transform.position.y;
         xStart = transform.position.x;
         zStart = transform.position.z;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         rb.drag = 2;
+
     }
     
     private void Update()
@@ -51,8 +53,9 @@ public class origDragObject : MonoBehaviour
             Transform potTransform = pot.transform;
             // get player position
             Vector3 potPosition = potTransform.position;
-            Debug.Log("position = " + transform.position);
-            Debug.Log("target position = " + newLocation);
+            
+            //Debug.Log("position = " + transform.position);
+            //Debug.Log("target position = " + newLocation);
 
             //Debug.Log("pot position = " + potPosition);
 
@@ -112,7 +115,7 @@ public class origDragObject : MonoBehaviour
             rb.velocity = direction * 15;
             
             
-            Debug.Log(rb.velocity);
+            //Debug.Log(rb.velocity);
             /*
             Vector3 direction = Vector3.MoveTowards(transform.position, newLocation, step);
             float force = 10;
@@ -120,8 +123,20 @@ public class origDragObject : MonoBehaviour
         }
         else
         {
+            //rb.useGravity = true;
+            if (inWater)
+            {
+                transform.Translate(0, -0.001f, 0);
+                //rb.position = rb.position - new Vector3(0, (1 / 5), 0);
+                //transform.position = transform.position - new Vector3(0, 1, 0)/10;
+                //Debug.Log("moving down");
+                //float newY = transform.position.y;
+                //newY += 1;
+                //transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            }
            
         }
+
     }
     private void OnMouseUp()
     {
@@ -138,15 +153,37 @@ public class origDragObject : MonoBehaviour
 
             //gameObject.transform.position).z;
 
-        Debug.Log("mouse down");
-        grabbed = true;
+        //Debug.Log("mouse down");
+        if (!inWater)
+        {
+            grabbed = true;
+        }
+        
 
         // Store offset = gameobject world pos - mouse world pos
 
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
 
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Finish")
+        {
+            rb.velocity = Vector3.zero;
+           
+            rb.useGravity = true;
+            rb.isKinematic = true;
+            Debug.Log("in water");
+            inWater = true;
+            grabbed = false;
+            rb.drag = 4;
+        }
+    }
+    //
+    //{
+    
+        //}
+    
 
 
     private Vector3 GetMouseAsWorldPoint()
