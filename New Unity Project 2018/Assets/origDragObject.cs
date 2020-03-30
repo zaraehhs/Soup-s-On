@@ -23,12 +23,15 @@ public class origDragObject : MonoBehaviour
     private Vector3 newLocation;
     private float maxDrag = 20;
     private bool inWater = false;
+    private bool counted;
     Rigidbody rb;
+    GameObject infoCanvas;
 
     //public GameObject : Transform;
     void Start()
     {
-       
+        infoCanvas = GameObject.Find("InfoCanvas");
+        counted = false;
         rb = GetComponent<Rigidbody>();
         yStart = transform.position.y;
         xStart = transform.position.x;
@@ -148,7 +151,7 @@ public class origDragObject : MonoBehaviour
     void OnMouseDown()
 
     {
-
+        
         //mZCoord = Camera.main.WorldToScreenPoint(
 
             //gameObject.transform.position).z;
@@ -177,6 +180,12 @@ public class origDragObject : MonoBehaviour
             inWater = true;
             grabbed = false;
             rb.drag = 4;
+            if (!counted)
+            {
+                infoCanvas.GetComponent<game>().addCount(gameObject.tag);
+                counted = true;
+            }
+            
         }
     }
     //
