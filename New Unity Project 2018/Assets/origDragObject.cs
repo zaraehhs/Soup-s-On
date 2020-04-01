@@ -179,7 +179,7 @@ public class origDragObject : MonoBehaviour
             Debug.Log("in water");
             inWater = true;
             grabbed = false;
-            rb.drag = 4;
+            //rb.drag = 4;
             if (!counted)
             {
                 infoCanvas.GetComponent<game>().addCount(gameObject.tag);

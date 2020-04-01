@@ -22,6 +22,8 @@ public class game : MonoBehaviour
     int wrongCount;
     public int tomatoCount;
     public int carrotCount;
+    public int potatoCount;
+    public int mushroomCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,14 @@ public class game : MonoBehaviour
         {
             carrotCount++;
         }
+        if (food == "potato")
+        {
+            potatoCount++;
+        }
+        if (food == "mushroom")
+        {
+            mushroomCount++;
+        }
 
         updateRecipeDisplay();
     }
@@ -99,6 +109,14 @@ public class game : MonoBehaviour
         if(food == "carrot")
         {
             return carrotCount;
+        }
+        if (food == "potato")
+        {
+            return potatoCount;
+        }
+        if (food == "mushroom")
+        {
+            return potatoCount;
         }
         return 0;
     }
