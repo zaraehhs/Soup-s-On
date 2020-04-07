@@ -9,6 +9,12 @@ TagManager:
   - carrot
   - mushroom
   - potato
+  - broccoli
+  - onion
+  - pepper
+  - garlic
+  - zucchini
+  - dropZone
   layers:
   - Default
   - TransparentFX

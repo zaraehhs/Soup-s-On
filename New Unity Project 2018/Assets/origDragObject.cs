@@ -26,11 +26,16 @@ public class origDragObject : MonoBehaviour
     private bool counted;
     Rigidbody rb;
     GameObject infoCanvas;
-
+    GameObject dropZone;
+    Collider dropCol;
+    private bool enteredDropZone;
     //public GameObject : Transform;
     void Start()
     {
         infoCanvas = GameObject.Find("InfoCanvas");
+        dropZone = GameObject.Find("dropZone");
+        dropCol = dropZone.GetComponent<BoxCollider>();
+        enteredDropZone = false;
         counted = false;
         rb = GetComponent<Rigidbody>();
         yStart = transform.position.y;
@@ -50,9 +55,15 @@ public class origDragObject : MonoBehaviour
 
             newLocation = GetMouseAsWorldPoint() +mOffset;
             
-
             
-            GameObject pot = GameObject.Find("pot");
+            if (dropCol.bounds.Contains(newLocation))
+            {
+                newLocation = dropZone.transform.position;
+                enteredDropZone = true;
+            }
+
+
+                GameObject pot = GameObject.Find("pot");
             Transform potTransform = pot.transform;
             // get player position
             Vector3 potPosition = potTransform.position;
@@ -129,7 +140,11 @@ public class origDragObject : MonoBehaviour
             //rb.useGravity = true;
             if (inWater)
             {
-                transform.Translate(0, -0.001f, 0);
+                if(transform.position.y > yStart)
+                {
+                    transform.Translate(0, -0.001f, 0);
+                }
+                
                 //rb.position = rb.position - new Vector3(0, (1 / 5), 0);
                 //transform.position = transform.position - new Vector3(0, 1, 0)/10;
                 //Debug.Log("moving down");
@@ -170,7 +185,8 @@ public class origDragObject : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Finish")
+        Debug.Log("trigger entered: " + gameObject.tag);
+        if (other.gameObject.tag == "Finish" && enteredDropZone)
         {
             rb.velocity = Vector3.zero;
            
@@ -187,6 +203,7 @@ public class origDragObject : MonoBehaviour
             }
             
         }
+       
     }
     //
     //{

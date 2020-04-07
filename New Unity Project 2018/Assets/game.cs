@@ -5,46 +5,71 @@ using UnityEngine.UI;
 
 public class game : MonoBehaviour
 {
-    public GameObject recipetitleO;
+    public GameObject recipetitle;
+    public GameObject clock;
     public Text recipeTitle;
     public Text foodText1;
     public Text foodText2;
     public Text foodText3;
+    public Text foodText4;
+    public Text messageText;
     public int recipeChoice;
     public string food1Name;
     public string food2Name;
     public string food3Name;
-    
+    public string food4Name;
+
     public int food1Tot;
     public int food2Tot;
     public int food3Tot;
+    public int food4Tot;
 
     int wrongCount;
     public int tomatoCount;
     public int carrotCount;
     public int potatoCount;
     public int mushroomCount;
+
+    public bool stoveOn = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        clock = GameObject.Find("clock");
         recipeTitle = GameObject.Find("recipeTitle").GetComponent<Text>();
         foodText1 = GameObject.Find("foodText1").GetComponent<Text>();
         foodText2 = GameObject.Find("foodText2").GetComponent<Text>();
         foodText3 = GameObject.Find("foodText3").GetComponent<Text>();
+        foodText4 = GameObject.Find("foodText4").GetComponent<Text>();
+        messageText = GameObject.Find("message").GetComponent<Text>();
+        messageText.text = "Turn on the stove with right knob";
+        //food4
+
+
+        food1Name = "";
+        food2Name = "";
+        food3Name = "";
+        food4Name = "";
         
-        food1Name = null;
-        food2Name = null;
-        food3Name = null;
-
-
         wrongCount = 0;
         tomatoCount = 0;
         carrotCount = 0;
+        mushroomCount = 0;
+        potatoCount = 0;
         
         recipeChoice = 1;
+
+        if(recipeChoice == 1)
+        {
+            recipeTitle.text = "Custom Recipe";
+            foodText1.text = "Put an Ingredient in the pot to start!";
+            food1Name = "";
+            food2Name = "";
+            food3Name = "";
+            food4Name = "";
+            //food4
+        }
         
-        if (recipeChoice == 1)
+        if (recipeChoice == 2)
         {
             Debug.Log("recipe1 chosen");
             //recipetitleO.GetComponent<Text>().text = "Tomato and Carrot Soup";
@@ -87,17 +112,62 @@ public class game : MonoBehaviour
         {
             mushroomCount++;
         }
-
+        if(food != food1Name && food != food2Name && food != food3Name && food != food4Name)//food4
+        {
+            if (recipeChoice == 1)
+            {
+                addCustomFood(food);
+            }
+            else
+            {
+                messageText.text = "This recipe doesnt use " + food + "!";
+                wrongCount++;
+                //clock.GetComponent<timer>().addTime(gameObject.tag);
+            }
+            
+        }
+        
+        
+      
         updateRecipeDisplay();
     }
     public void updateRecipeDisplay()
     {
-        foodText1.text = food1Name + ": " + getCount(food1Name) + " / " + food1Tot;
-        foodText2.text = food2Name + ": " + getCount(food2Name) + " / " + food2Tot;
-        if (food3Name != null)
+        if (recipeChoice == 1)
         {
-            foodText3.text = food3Name + ": " + getCount(food3Name) + " / " + food3Tot;
+            if (food1Name != "")
+            {
+                foodText1.text = food1Name + ": " + getCount(food1Name);
+            }
+            if (food2Name != "")
+            {
+                foodText2.text = food2Name + ": " + getCount(food2Name);
+            }
+            
+           
+            if (food3Name != "")
+            {
+                foodText3.text = food3Name + ": " + getCount(food3Name);
+            }
+            if (food4Name != "")
+            {
+                foodText4.text = food4Name + ": " + getCount(food4Name);
+            }
         }
+        else
+        {
+            foodText1.text = food1Name + ": " + getCount(food1Name) + " / " + food1Tot;
+            foodText2.text = food2Name + ": " + getCount(food2Name) + " / " + food2Tot;
+            if (food3Name != "")
+            {
+                foodText3.text = food3Name + ": " + getCount(food3Name) + " / " + food3Tot;
+            }
+            if (food4Name != "")
+            {
+                foodText4.text = food4Name + ": " + getCount(food4Name) + " / " + food4Tot;
+            }
+        }
+        
     }
 
     public int getCount(string food)
@@ -119,5 +189,33 @@ public class game : MonoBehaviour
             return potatoCount;
         }
         return 0;
+    }
+
+    public void addCustomFood(string food)
+    {
+        if(food1Name == "")
+        {
+            food1Name = food;
+            return;
+        }else if(food2Name == "")
+        {
+            food2Name = food;
+            return;
+        }else if(food3Name == "")
+        {
+            food3Name = food;
+            return;
+        }
+        else if (food4Name == "")
+        {
+            food4Name = food;
+            messageText.text = "Maximum ingredients reached";
+            return;
+        }
+        else
+        {
+            Debug.Log("maximum custom foods already");
+        }
+
     }
 }
