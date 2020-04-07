@@ -15,6 +15,7 @@ TagManager:
   - garlic
   - zucchini
   - dropZone
+  - cucumber
   layers:
   - Default
   - TransparentFX

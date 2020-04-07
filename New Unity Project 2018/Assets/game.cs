@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class game : MonoBehaviour
 {
     public GameObject recipetitle;
-    public GameObject clock;
+    public Text clockText;
     public Text recipeTitle;
     public Text foodText1;
     public Text foodText2;
@@ -31,10 +31,14 @@ public class game : MonoBehaviour
     public int mushroomCount;
 
     public bool stoveOn = false;
+
+    public float seconds, minutes;
+    public float bonusSeconds;
     // Start is called before the first frame update
     void Start()
     {
-        clock = GameObject.Find("clock");
+        bonusSeconds = 0;
+        clockText = GameObject.Find("clock").GetComponent<Text>();
         recipeTitle = GameObject.Find("recipeTitle").GetComponent<Text>();
         foodText1 = GameObject.Find("foodText1").GetComponent<Text>();
         foodText2 = GameObject.Find("foodText2").GetComponent<Text>();
@@ -88,8 +92,15 @@ public class game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       
+        minutes = (int)(Time.time / 60f);
+        seconds = (int)(Time.time % 60f) + bonusSeconds;
+        if (seconds >= 60)
+        {
+            seconds -= 60;
+            minutes += 1;
+        }
+        clockText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+
     }
 
     
@@ -217,5 +228,9 @@ public class game : MonoBehaviour
             Debug.Log("maximum custom foods already");
         }
 
+    }
+    void addTime()
+    {
+        bonusSeconds += 10;
     }
 }

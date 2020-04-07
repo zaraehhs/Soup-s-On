@@ -63,7 +63,7 @@ public class origDragObject : MonoBehaviour
             }
 
 
-                GameObject pot = GameObject.Find("pot");
+            GameObject pot = GameObject.Find("pot");
             Transform potTransform = pot.transform;
             // get player position
             Vector3 potPosition = potTransform.position;
