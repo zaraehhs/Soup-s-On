@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - shelfObject
+  - tomato
+  - carrot
+  - mushroom
+  - potato
+  - broccoli
+  - onion
+  - pepper
+  - garlic
+  - zucchini
+  - dropZone
+  - cucumber
   layers:
   - Default
   - TransparentFX
