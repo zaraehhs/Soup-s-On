@@ -62,7 +62,7 @@ public class game : MonoBehaviour
         
         recipeChoice = 1;
 
-        if(recipeChoice == 1)
+        if(recipeChoice == 0)
         {
             recipeTitle.text = "Custom Recipe";
             foodText1.text = "Put an Ingredient in the pot to start!";
@@ -72,16 +72,68 @@ public class game : MonoBehaviour
             food4Name = "";
             //food4
         }
-        
-        if (recipeChoice == 2)
+        //easy
+        if (recipeChoice == 1)
         {
             Debug.Log("recipe1 chosen");
             //recipetitleO.GetComponent<Text>().text = "Tomato and Carrot Soup";
-            recipeTitle.text = "Tomato and Carrot Soup";
-            food1Name = "tomato";
-            food1Tot = 3;
-            food2Name = "carrot";
+            recipeTitle.text = "Sunrise Soup";
+            food1Name = "Tomato";
+            food1Tot = 2;
+            food2Name = "Carrot";
             food2Tot = 2;
+        }
+        if (recipeChoice == 2)
+        {
+            recipeTitle.text = "Tasty and Pasty";
+            food1Name = "potato";
+            food1Tot = 2;
+            food2Name = "broccoli";
+            food2Tot = 2;
+        }
+        if (recipeChoice == 3)
+        {
+            recipeTitle.text = "Two Veggie Soup";
+            food1Name = "carrot";
+            food1Tot = 2;
+            food2Name = "broccoli";
+            food2Tot = 2;
+        }
+        //med
+        if(recipeChoice == 11)
+        {
+            recipeTitle.text = "Zucchini and the fellas";
+            food1Name = "zucchini";
+            food1Tot = 2;
+            food2Name = "onion";
+            food2Tot = 2;
+            food3Name = "potato";
+            food3Tot = 2;
+            
+        }
+        //hard
+        if (recipeChoice == 21)
+        {
+            recipeTitle.text = "Mushroom Mumbo";
+            food1Name = "mushroom";
+            food1Tot = 3;
+            food2Name = "tomato";
+            food2Tot = 2;
+            food3Name = "garlic";
+            food3Tot = 2;
+            food3Name = "onion";
+            food3Tot = 2;
+        }
+        if (recipeChoice == 22)
+        {
+            recipeTitle.text = "Mean and Green";
+            food1Name = "cucumber";
+            food1Tot = 3;
+            food2Name = "zucchini";
+            food2Tot = 2;
+            food3Name = "broccoli";
+            food3Tot = 3;
+            
         }
         updateRecipeDisplay();
         //recipeDisplay = GameObject.Find("recipe").GetComponent<Text>();
