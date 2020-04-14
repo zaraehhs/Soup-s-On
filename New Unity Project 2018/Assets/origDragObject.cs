@@ -174,7 +174,15 @@ public class origDragObject : MonoBehaviour
         //Debug.Log("mouse down");
         if (!inWater)
         {
-            grabbed = true;
+            if (!infoCanvas.GetComponent<game>().stoveOn)
+            {
+                infoCanvas.GetComponent<game>().setMessage("Turn on the stove with right knob");
+            }
+            else
+            {
+                grabbed = true;
+            }
+            
         }
         
 
