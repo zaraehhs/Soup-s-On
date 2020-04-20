@@ -485,7 +485,7 @@ RectTransform:
   m_GameObject: {fileID: 203588442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1830862, y: 0.43205336, z: 0.05649605}
+  m_LocalScale: {x: 0.22885776, y: 0.50770587, z: 0.05649605}
   m_Children: []
   m_Father: {fileID: 1756146272}
   m_RootOrder: 0
@@ -1741,14 +1741,14 @@ RectTransform:
   m_GameObject: {fileID: 507486672}
   m_LocalRotation: {x: 0.03685369, y: 0.016382577, z: 0.009006812, w: 0.99914587}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32068637, y: 1.0403051, z: 0.06991575}
+  m_LocalScale: {x: 0.3765179, y: 1.0403051, z: 0.06991575}
   m_Children: []
   m_Father: {fileID: 1756146272}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 4.2380004, y: -0.066, z: 0.13900001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.320755, y: 75.02017}
+  m_AnchoredPosition: {x: 15.9, y: 69.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507486674
@@ -3502,7 +3502,7 @@ RectTransform:
   m_GameObject: {fileID: 1038663502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1830862, y: 0.43205336, z: 0.05649605}
+  m_LocalScale: {x: 0.22940129, y: 0.5098905, z: 0.05649605}
   m_Children: []
   m_Father: {fileID: 930473937}
   m_RootOrder: 0
@@ -5687,14 +5687,14 @@ RectTransform:
   m_GameObject: {fileID: 1932347777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7182017, y: 1.6465777, z: 0.065827444}
+  m_LocalScale: {x: 0.79899937, y: 1.7700711, z: 0.065827444}
   m_Children: []
   m_Father: {fileID: 1756146272}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.1, y: 24.9}
+  m_AnchoredPosition: {x: -66.3, y: 28}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932347779
