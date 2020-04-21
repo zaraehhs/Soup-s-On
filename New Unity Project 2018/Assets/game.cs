@@ -115,6 +115,14 @@ public class game : MonoBehaviour
             food2Name = "broccoli";
             food2Tot = 3;
         }
+        if (recipeChoice == 4)
+        {
+            recipeTitle.text = "Spicy Carrot Soup";
+            food1Name = "carrot";
+            food1Tot = 3;
+            food2Name = "pepper";
+            food2Tot = 2;
+        }
         //med
         if(recipeChoice == 11)
         {
@@ -124,6 +132,43 @@ public class game : MonoBehaviour
             food2Name = "onion";
             food2Tot = 2;
             food3Name = "potato";
+            food3Tot = 4;
+            food4Name = "garlic";
+            food4Tot = 4;
+            
+        }
+         if(recipeChoice == 12)
+        {
+            recipeTitle.text = "Pizza Soup";
+            food1Name = "tomato";
+            food1Tot = 4;
+            food2Name = "onion";
+            food2Tot = 2;
+            food3Name = "mushroom";
+            food3Tot = 1;
+            food4Name = "garlic";
+            food4Tot = 1;
+            
+        }
+         if(recipeChoice == 13)
+        {
+            recipeTitle.text = "Soothing Ginger Soup";
+            food1Name = "ginger";
+            food1Tot = 2;
+            food2Name = "onion";
+            food2Tot = 2;
+            food3Name = "garlic";
+            food3Tot = 3;
+            
+        }
+         if(recipeChoice == 14)
+        {
+            recipeTitle.text = "Vegetable Salsa Soup";
+            food1Name = "cucumber";
+            food1Tot = 2;
+            food2Name = "onion";
+            food2Tot = 2;
+            food3Name = "tomato";
             food3Tot = 4;
             
         }
@@ -137,8 +182,8 @@ public class game : MonoBehaviour
             food2Tot = 3;
             food3Name = "garlic";
             food3Tot = 3;
-            food3Name = "onion";
-            food3Tot = 2;
+            food4Name = "onion";
+            food4Tot = 2;
         }
         if (recipeChoice == 22)
         {
@@ -149,6 +194,32 @@ public class game : MonoBehaviour
             food2Tot = 2;
             food3Name = "broccoli";
             food3Tot = 3;
+            
+        }
+
+        if(recipeChoice == 23)
+        {
+            recipeTitle.text = "Crunchy Pepper Soup";
+            food1Name = "cucumber";
+            food1Tot = 3;
+            food2Name = "pepper";
+            food2Tot = 2;
+            food3Name = "tomato";
+            food3Tot = 4;
+            
+            
+        }
+         if(recipeChoice == 24)
+        {
+            recipeTitle.text = "Red Potato Soup";
+            food1Name = "pepper";
+            food1Tot = 2;
+            food2Name = "onion";
+            food2Tot = 2;
+            food3Name = "tomato";
+            food3Tot = 4;
+            food4Name = "garlic";
+            food4Tot = 4;
             
         }
         updateRecipeDisplay();
