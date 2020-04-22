@@ -62,7 +62,8 @@ public class recipeSelect : MonoBehaviour
 public void crunchyPepper(){
         global.recipeChoice = 23;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }public void redPotato(){
+    }
+public void redPotato(){
         global.recipeChoice = 24;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
